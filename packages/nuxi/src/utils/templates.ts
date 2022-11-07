@@ -13,7 +13,7 @@ const httpMethods = ['connect', 'delete', 'get', 'head', 'options', 'post', 'put
 const api: Template = ({ name, args }) => ({
   path: `server/api/${name}${applySuffix(args, httpMethods, 'method')}.ts`,
   contents: `
-export default defineEventHandler((event) => {
+export default eventHandler((event) => {
   return 'Hello ${name}'
 })
 `
